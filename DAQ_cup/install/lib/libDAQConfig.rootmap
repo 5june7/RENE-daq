@@ -1,0 +1,34 @@
+[ libDAQConfig.so ]
+# List of selected classes
+class AbsConf
+class AbsConfList
+class AmoreADCConf
+class DAQConf
+class FADCSConf
+class FADCTConf
+class GADCSConf
+class GADCTConf
+class IADCTConf
+class MADCSConf
+class RunConfig
+class SADCSConf
+class SADCTConf
+class STRGConf
+class TCBConf
+class TriggerLookupTable
+header DAQConfig/AbsConf.hh
+header DAQConfig/AbsConfList.hh
+header DAQConfig/AmoreADCConf.hh
+header DAQConfig/DAQConf.hh
+header DAQConfig/FADCSConf.hh
+header DAQConfig/FADCTConf.hh
+header DAQConfig/GADCSConf.hh
+header DAQConfig/GADCTConf.hh
+header DAQConfig/IADCTConf.hh
+header DAQConfig/MADCSConf.hh
+header DAQConfig/RunConfig.hh
+header DAQConfig/SADCSConf.hh
+header DAQConfig/SADCTConf.hh
+header DAQConfig/STRGConf.hh
+header DAQConfig/TCBConf.hh
+header DAQConfig/TriggerLookupTable.hh

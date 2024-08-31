@@ -1,0 +1,26 @@
+#!/bin/bash 
+
+run=000101
+
+
+pwDir=`pwd`
+CodeDir=$pwDir/../Code
+LOG=$pwDir/../LOG/log_merge_FADC_SADC_run$run.txt
+DataDir=$pwDir/../../Data/RAW/$run
+MergedDir=$DataDir/Merged; mkdir -p $MergedDir
+
+
+maxsubrun=`ls -l $DataDir/ | grep root | grep FADC | grep -v grep | wc -l`
+maxsubrun=$(( $maxsubrun - 1 ))
+echo "Max subrun # = "$maxsubrun
+
+
+run=$(echo $run | sed 's/^0*//')
+
+
+cd $CodeDir
+date > $LOG
+#root -l merge_FADC_SADC.cc+\($run,$maxsubrun\) >> $LOG
+#date >> $LOG
+root -l -b -q  merge_FADC_SADC.cc\($run,$maxsubrun\) #>> $LOG
+date >> $LOG

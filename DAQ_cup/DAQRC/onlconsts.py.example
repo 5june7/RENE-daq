@@ -1,0 +1,52 @@
+#
+# DAQ Server where tcb is supposed to be runnig
+#
+kDAQSERVER_IP = ''
+kDAQSERVER_PORT =
+kDAQSERVER_ADDR = (kDAQSERVER_IP, kDAQSERVER_PORT)
+
+# if RC is running on same server with DAQ
+kISREMOTEDAQ = False
+
+# kONLDAQ_DIR and kRAWDATA_DIR at DAQ server
+kONLDAQ_DIR = ''
+kRAWDATA_DIR = ''
+
+# run catalog db file should be in same server with RC
+kRUNCATALOGDBFILE = ''
+kDEFAULTCONFIGDIR = ''
+
+#
+# Add more run type
+#
+kRUNTYPELIST = ['', 'physics', 'calibration', 'test']
+
+# ===========================================================
+#
+# Do not modify from here!!!
+#
+kEXESCRIPT = 'executedaq.sh'
+kMESSLEN = 32
+
+# Commands
+kCONFIGRUN = 1
+kSTARTRUN = 2
+kENDRUN = 3
+kEXIT = 4
+kQUERYDAQSTATUS = 10
+kQUERYRUNINFO = 12
+kQUERYTRGINFO = 14
+kQUERYMONITOR = 21
+
+# RUN Status
+kDOWN = 0
+kBOOTED = 1
+kCONFIGURED = 2
+kRUNNING = 3
+kRUNENDED = 4
+kPROCENDED = 5
+kWARNING = 6
+kERROR = 7
+
+kDAQSTATE = ['Down', 'Booted', 'Configured',
+             'Running', 'RunEnd', 'RunEnd', '', 'Error']

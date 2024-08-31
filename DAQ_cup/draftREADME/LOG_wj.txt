@@ -1,0 +1,46 @@
+
+
+Change "DAQ_cup_w_DAQRC" to the proper name like "DAQ_cup"
+
+# 2024/04/00
+[[ DAQRC ]]
+0. Refer to "READMEwj" in "DAQRC" directory.
+
+
+# 2024/03/22
+[[ Remote control installation ]]
+DAQ PC
+0. install proper " rustdesk " in this case, ---.rpm on DAQ PC.
+1. sudo vi /etc/gdm/custom.conf -> edit " #Wayland=false " as " Wayland=false ".
+2. go to "Settings" on Rocky 9 and turn on "Screen Sharing" 
+   (including "Allow connections to control the screen).
+3. run " rustdesk ".
+4. Setting PASSWD at "Security".
+
+Local PC
+1. install " rustdesk " on your local PC.
+2. log on with rustdesk ID, like ip number, of DAQ PC.
+3. ENJOY ~ 
+
+
+# 2024/03/11
+[[libusb 1.0.27 installation]]
+ 0. yum -y install cmake
+ 1. "wget https://github.com/libusb/libusb/archive/refs/tags/v1.0.27.tar.gz ./{software directory}".
+ 2. "tar -xzf v1.0.27.tar.gz".
+ 3. " sudo yum groupinstall "Development Tools" ".
+ 4. "./autogen.sh".
+ 5. "./configure".
+ 5-2. Resolve dependenfies ~
+   - For my case, "sudu yum install libudev-devel" <- not istnalled now
+   *. yum install libusbx, yum install libusbx-devel
+ 6. "sudo make install prefix={DIRECTORY}".
+ 7. 
+
+
+# 2024/03/11
+""RESOLVED BY INSTALLING ROCKY-9.""
+To avoid an error w/ "LIBUSB_OPTION_MAX",
+I comment out "libusb_set_option(...)" in /home/frontend/DAQ/CUPDAQ/DAQ/test/usbreset.cc, which the program might not use the cc code.
+
+This is because libusb 1.0.23 doesn't have "LIBUSB_OPTION_MAX".

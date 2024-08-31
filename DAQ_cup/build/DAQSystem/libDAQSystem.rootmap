@@ -1,0 +1,28 @@
+[ libDAQSystem.so ]
+# List of selected classes
+class AbsADC
+class AbsTCB
+class AmoreADC
+class CupFADCS
+class CupFADCT
+class CupGADCS
+class CupGADCT
+class CupIADCT
+class CupMADCS
+class CupMiniTCB
+class CupSADCS
+class CupSADCT
+class CupTCB
+header DAQSystem/AbsADC.hh
+header DAQSystem/AbsTCB.hh
+header DAQSystem/AmoreADC.hh
+header DAQSystem/CupFADCS.hh
+header DAQSystem/CupFADCT.hh
+header DAQSystem/CupGADCS.hh
+header DAQSystem/CupGADCT.hh
+header DAQSystem/CupIADCT.hh
+header DAQSystem/CupMADCS.hh
+header DAQSystem/CupMiniTCB.hh
+header DAQSystem/CupSADCS.hh
+header DAQSystem/CupSADCT.hh
+header DAQSystem/CupTCB.hh

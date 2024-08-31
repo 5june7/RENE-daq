@@ -1,0 +1,149 @@
+Max subrun # = 82
+Run 83 Subrun 
+0 41
+
+Processing compare_MERGED_RAW.C(83,0,41)...
+
+--------------------
+iEntry = 0
+FADC - channel 0
+PID Raw : Mrg = 1 : 1
+BIT Raw : Mrg = 1 : 1
+NDP Raw : Mrg = 496 : 496
+Pedestal Raw : Mrg = 1240 : 1240
+TCBTrgT Raw : Mrg = 26431952 : 26431952
+
+iEntry = 0
+SADC - channel 10
+PID Raw : Mrg = 11 : 11
+BITv Raw : Mrg = 0 : 0
+ADC Raw : Mrg = 287 : 287
+Peak T Raw : Mrg = 26431720 : 26431720
+TCBTrgT Raw : Mrg = 26431952 : 26431952
+--------------------
+
+1 / 607449 Comparing ... 
+60745 / 607449 Comparing ... 
+121489 / 607449 Comparing ... 
+182233 / 607449 Comparing ... 
+242977 / 607449 Comparing ... 
+303721 / 607449 Comparing ... 
+
+--------------------
+iEntry = 303724
+FADC - channel 0
+PID Raw : Mrg = 1 : 1
+BIT Raw : Mrg = 1 : 1
+NDP Raw : Mrg = 496 : 496
+Pedestal Raw : Mrg = 1240 : 1240
+TCBTrgT Raw : Mrg = 200233992 : 200233992
+
+iEntry = 303724
+SADC - channel 10
+PID Raw : Mrg = 11 : 11
+BITv Raw : Mrg = 0 : 0
+ADC Raw : Mrg = 455 : 455
+Peak T Raw : Mrg = 200233736 : 200233736
+TCBTrgT Raw : Mrg = 200233992 : 200233992
+--------------------
+
+364465 / 607449 Comparing ... 
+425209 / 607449 Comparing ... 
+485953 / 607449 Comparing ... 
+546697 / 607449 Comparing ... 
+607441 / 607449 Comparing ... 
+
+--------------------
+iEntry = 607448
+FADC - channel 0
+PID Raw : Mrg = 1 : 1
+BIT Raw : Mrg = 1 : 1
+NDP Raw : Mrg = 496 : 496
+Pedestal Raw : Mrg = 1240 : 1240
+TCBTrgT Raw : Mrg = 12322154336 : 12322154336
+
+iEntry = 607448
+SADC - channel 10
+PID Raw : Mrg = 11 : 11
+BITv Raw : Mrg = 1 : 1
+ADC Raw : Mrg = 3278 : 3278
+Peak T Raw : Mrg = 3732219536 : 3732219536
+TCBTrgT Raw : Mrg = 12322154336 : 12322154336
+--------------------
+
+Processed events / # of events in Merged file
+607449 / 607449
+Run 83 Subrun 
+42 82
+
+Processing compare_MERGED_RAW.C(83,42,82)...
+
+--------------------
+iEntry = 0
+FADC - channel 0
+PID Raw : Mrg = 1 : 1
+BIT Raw : Mrg = 1 : 1
+NDP Raw : Mrg = 496 : 496
+Pedestal Raw : Mrg = 1240 : 1240
+TCBTrgT Raw : Mrg = 12345105160 : 12345105160
+
+iEntry = 0
+SADC - channel 10
+PID Raw : Mrg = 11 : 11
+BITv Raw : Mrg = 0 : 0
+ADC Raw : Mrg = 364 : 364
+Peak T Raw : Mrg = 3755170304 : 3755170304
+TCBTrgT Raw : Mrg = 12345105160 : 12345105160
+--------------------
+
+1 / 589543 Comparing ... 
+58955 / 589543 Comparing ... 
+117909 / 589543 Comparing ... 
+176863 / 589543 Comparing ... 
+235817 / 589543 Comparing ... 
+294771 / 589543 Comparing ... 
+
+--------------------
+iEntry = 294771
+FADC - channel 0
+PID Raw : Mrg = 1 : 1
+BIT Raw : Mrg = 1 : 1
+NDP Raw : Mrg = 496 : 496
+Pedestal Raw : Mrg = 1240 : 1240
+TCBTrgT Raw : Mrg = 4672111544 : 4672111544
+
+iEntry = 294771
+SADC - channel 10
+PID Raw : Mrg = 11 : 11
+BITv Raw : Mrg = 0 : 0
+ADC Raw : Mrg = 336 : 336
+Peak T Raw : Mrg = 377143992 : 377143992
+TCBTrgT Raw : Mrg = 4672111544 : 4672111544
+--------------------
+
+353725 / 589543 Comparing ... 
+412679 / 589543 Comparing ... 
+471633 / 589543 Comparing ... 
+530587 / 589543 Comparing ... 
+589541 / 589543 Comparing ... 
+
+--------------------
+iEntry = 589542
+FADC - channel 0
+PID Raw : Mrg = 1 : 1
+BIT Raw : Mrg = 1 : 1
+NDP Raw : Mrg = 496 : 496
+Pedestal Raw : Mrg = 1240 : 1240
+TCBTrgT Raw : Mrg = 12316976376 : 12316976376
+
+iEntry = 589542
+SADC - channel 10
+PID Raw : Mrg = 11 : 11
+BITv Raw : Mrg = 0 : 0
+ADC Raw : Mrg = 240 : 240
+Peak T Raw : Mrg = 3727041600 : 3727041600
+TCBTrgT Raw : Mrg = 12316976376 : 12316976376
+--------------------
+
+Processed events / # of events in Merged file
+589543 / 589543

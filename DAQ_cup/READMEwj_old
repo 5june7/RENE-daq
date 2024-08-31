@@ -1,0 +1,108 @@
+# CUPDAQ - DAQ Software for CUP (Center for Underground Physics)
+
+## Requirements
+##### ROOT: > V6 
+##### libusb-1.0 
+##### (optional) HDF5: tested with 1.14.1
+
+# 2024/03/11
+""RESOLVED BY INSTALLING ROCKY-9.""
+To avoid an error w/ "LIBUSB_OPTION_MAX",
+I comment out "libusb_set_option(...)" in /home/frontend/DAQ/CUPDAQ/DAQ/test/usbreset.cc, which the program might not use the cc code.
+This is because libusb 1.0.23 doesn't have "LIBUSB_OPTION_MAX".
+
+Or if you want to use the different OS, refer to the right below.
+# 2024/03/11
+[[libusb 1.0.27 installation]]
+ 0. yum -y install cmake
+ 1. "wget https://github.com/libusb/libusb/archive/refs/tags/v1.0.27.tar.gz ./{software directory}".
+ 2. "tar -xzf v1.0.27.tar.gz".
+ 3. " sudo yum groupinstall "Development Tools" ".
+ 4. "./autogen.sh".
+ 5. "./configure".
+ 5-2. Resolve dependenfies ~
+   - For my case, "sudu yum install libudev-devel"
+   *. yum install libusbx, yum install libusbx-devel
+ 6. "sudo make install prefix={DIRECTORY}".
+
+
+## Prerequisite
+
+Copy below to /etc/udev/rules.d/88-notice.rules, run "`udevadm control --reload-rules && udevadm trigger`" with root privilege.
+```
+SUBSYSTEM=="usb", ATTR{idVendor}=="0547", ATTR{idProduct}=="1000", MODE="0666" 
+SUBSYSTEM=="usb", ATTR{idVendor}=="0547", ATTR{idProduct}=="1501", MODE="0666" 
+SUBSYSTEM=="usb", ATTR{idVendor}=="0547", ATTR{idProduct}=="1502", MODE="0666" 
+SUBSYSTEM=="usb", ATTR{idVendor}=="0547", ATTR{idProduct}=="1503", MODE="0666" 
+SUBSYSTEM=="usb", ATTR{idVendor}=="0547", ATTR{idProduct}=="1903", MODE="0666"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0547", ATTR{idProduct}=="2010", MODE="0666"
+```
+
+# 
+# 2024.04.25 : WJ for RENE daq system.
+#
+---- For ROCKY LINUX 9 -----
+
+*. Initial setting for SELinux
+    0. Checking the current status of SELinux
+        ` getenforce `
+    
+    If it is not "Disabled", follow the below 1-x steps.
+    
+    1-0. super user (su)
+    1-1. ` grubby --update-kernel ALL --args selinux=0 `
+    1-2. ` reboot `
+    1-3. recheck the status of SELinux; `getenforce `
+    If it doesn't work, follow the step 1-4.
+    1-4. ` grubby --update-kernel ALL --remove-args selinux `
+    1-5. ` reboot ` and recheck `getenforce `
+
+    or
+    
+    su; vi /etc/selinux/config;
+    "edit SELINUX=enforcing -> SELINUX=disabled"
+
+
+* Initial setting for tcp port
+    We will use "7809 for tcb", "7814 for fadc", and "7815 for sadc",
+    so we should open the above ports.
+
+    1-0. super user (su)
+    1-1. ` firewall-cmd --add-port=7809/tcp --permanent; firewall-cmd --add-port=7814/tcp --permanent; firewall-cmd --add-port=7815/tcp --permanent `
+    1-2. ` firewall-cmd --reload `
+    1-3. check the stauts of the ports; The answer is expected to be "yes".
+        ` firewall-cmd --query-port=7809/tcp `
+        ` firewall-cmd --query-port=7814/tcp `
+        ` firewall-cmd --query-port=7815/tcp `
+
+
+* Initial setting for ssh key
+    We will enter the above servers with ssh,
+    so we should give ssh key to the host.
+
+    1-1. Make the key: ` ssh-keygen ` + press the Enter button three times.
+    1-2. ` cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys ` 
+
+    or
+
+    1-1. Make the key: ` ssh-keygen ` + press the Enter button three times.
+    1-2. ` ssh-copy-id -i ~/.ssh/id_rsa.pub localhost ` 
+
+
+*. Errors in the RENE experiment
+If you got the errors in log files, FADCT_####.log, TCB_####.log, and so on,
+    " *** buffer overflow detected ***: terminated ",
+then follow the below.
+
+    1-0. The error arises from " CUPDAQ/DAQ/src/CupDAQManager_tfunc.cc "
+    1-1. Add this, " if( sd == -1 ) continue; // JS/WJ ",
+        to the 337 line right below, `int sd = client_socket[i];`.
+        The line is in the function, " void CupDAQManager::TF_MsgServer() ".
+
+We don't know why this error happens now (2024.04.25 KPS Spring).
+Dr. JS Lee (CUP) says "I need to correct the error!".
+
+
+*. "Merger" option is to put data together for the case that the daq system utilizes several PC for several adc boards.
+
+

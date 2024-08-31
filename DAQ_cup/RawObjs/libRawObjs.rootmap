@@ -1,0 +1,16 @@
+[ libRawObjs.so ]
+# List of selected classes
+class AChannel
+class AChannelData
+class AbsChannel
+class ArrayS
+class EventInfo
+class FChannel
+class FChannelData
+header RawObjs/AChannel.hh
+header RawObjs/AChannelData.hh
+header RawObjs/AbsChannel.hh
+header RawObjs/ArrayS.hh
+header RawObjs/EventInfo.hh
+header RawObjs/FChannel.hh
+header RawObjs/FChannelData.hh

@@ -1,0 +1,14 @@
+# 2024.04.00
+  0. 
+
+
+# 2024.03.18
+  0. Edit "cupdaq_env.sh".
+  1. ` source cupdaq_env.sh `
+    --> #0 and #1 don't need to be used when you run with the run controller.
+
+  2. If you don't have "build" and "install" directories,
+     ` mkdir build; mkdir install `
+  3. ` ./AllInOne.sh `
+  4. ` cd ./install/bin/ `
+  5. Run the executable file that you want to run with the proper cfg file.

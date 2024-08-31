@@ -1,0 +1,16 @@
+[ libOnlObjs.so ]
+# List of selected classes
+class ADCHeader
+class AbsADCRaw
+class BuiltEvent
+class FADCRawChannel
+class FADCRawEvent
+class SADCRawEvent
+class TimeCalConsts
+header OnlObjs/ADCHeader.hh
+header OnlObjs/AbsADCRaw.hh
+header OnlObjs/BuiltEvent.hh
+header OnlObjs/FADCRawChannel.hh
+header OnlObjs/FADCRawEvent.hh
+header OnlObjs/SADCRawEvent.hh
+header OnlObjs/TimeCalConsts.hh

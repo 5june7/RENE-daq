@@ -1,0 +1,15 @@
+
+# 2024.08.21
+
+kill_produtcion.sh
+	Kill the merge_FADC_SADC.sh if an error occurs when you run the script.
+
+merge_FADC_SADC_realtime.sh
+	Realtime merging and producing
+
+merge_FADC_SADC.sh
+	Merging and producing
+
+
+
+

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -std=c++17 -pipe -fsigned-char -pthread -shared -Wl,-soname,libDAQTrigger.so -o libDAQTrigger.so CMakeFiles/DAQTrigger.dir/src/AbsSoftTrigger.cc.o CMakeFiles/DAQTrigger.dir/src/CupSoftTrigger.cc.o   -L/home/frontend/Software/root/v6.28.04/install/lib 

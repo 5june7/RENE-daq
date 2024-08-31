@@ -1,0 +1,26 @@
+
+#
+#   With run controller
+#
+  0. Got to ` DAQRC ` directory
+  1. Read and follow DAQRC/READMEwj
+
+#
+# You don't keep the below in mind when you use the run controller.
+#
+
+# 2024.03.18
+#
+#   Without run controller.
+#
+  0. Edit "cupdaq_env.sh".
+  1. ` source cupdaq_env.sh `
+    --> We don't need to use #0 and #1 
+        when you run with the run controller.
+
+  2. If you don't have "build" and "install" directories,
+     ` mkdir build; mkdir install `
+  3. ` ./AllInOne.sh `
+  4. ` cd ./install/bin/ `
+  5. Run the executable file that you want to run with the proper cfg file.
+

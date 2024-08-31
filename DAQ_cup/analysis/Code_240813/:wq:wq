@@ -1,0 +1,20 @@
+
+#include "../Base/src/Format.cc"
+
+
+void SourceData_ComptonEdgeFitting(char* source){
+
+    TFile* inf = new TFile(Form("../Data/SourceData_%s_20m.root", source), "read");
+    TH1D* h_bkg = (TH1D*) inf->Get("BKG");
+    TH1D* h_source = (TH1D*) inf->Get("Source");
+    TH1D* h_sub = (TH1D*) inf->Get("Subtracted");
+
+
+    TF1* f_err = new TF1("f_err", "[0] * TMath::Erf( (x-[1]) / [2] )", 0, 2000);
+
+    h_sub->Fit("f_err");
+
+
+
+
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -std=c++17 -pipe -fsigned-char -pthread -shared -Wl,-soname,libDAQUtils.so -o libDAQUtils.so CMakeFiles/DAQUtils.dir/src/ELog.cc.o CMakeFiles/DAQUtils.dir/src/ELogger.cc.o CMakeFiles/DAQUtils.dir/G__DAQUtils.cxx.o   -L/home/frontend/Software/root/v6.28.04/install/lib 

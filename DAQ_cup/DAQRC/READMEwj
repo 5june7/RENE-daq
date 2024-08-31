@@ -1,0 +1,110 @@
+#
+#   HOW TO USE DAQRC.
+#
+
+#
+# Execute the line in ` `.
+#
+
+#
+# Initial installation.
+#
+0-1. Install belows.
+    ` su ` 
+    ` yum install python3-devel; yum install PyQt5; yum install qt5-qtbase-devel `
+    ` yum install python-pip `
+    ` pip install pydblite `
+
+0-*. 
+    If you got an error like the below, (example)
+    
+    from pydblite.sqlite import Database, Table
+    ModuleNotFoundError: No module named 'pydblite' ,
+
+    you don't have the package, so please install it.
+
+    ` sudo pip install pydblite ` 
+
+    "Also, if DAQ PC warns you that some packages are missing, then istall the packages."
+
+
+#
+# Initial setting to Run the Run controller
+# 
+0-1. ` cd /home/{YOUR_DIRECTORY}/DAQ/DAQ_cup `
+0-2. ` ./AllInOne.sh `
+    -> ./Data, ./Data/LOG, ./Data/Raw, ./Data/CONFIG wil be generated.
+
+1-1. ` cd /home/{YOUR_DIRECTORY}/DAQ/DAQ_cup/DAQRC `
+1-2. ` vi onlconsts.py `
+    Change "frontend" to {YOUR_DIRECTORY}.
+1-3. ` rm -f runcatalog.db ` 
+1-4. ` python create_runcatalog_db.py -f ` when you use FADC.
+     ` python create_runcatalog_db.py -s ` when you use SADC.
+    -> You can see the below message if you create "runcatalog.db".
+"
+('runnum', {'type': 'INTEGER', 'NOT NULL': False, 'DEFAULT': None})
+('runtype', {'type': 'TEXT', 'NOT NULL': False, 'DEFAULT': None})
+('rundesc', {'type': 'TEXT', 'NOT NULL': False, 'DEFAULT': None})
+('shift', {'type': 'TEXT', 'NOT NULL': False, 'DEFAULT': None})
+('config', {'type': 'TEXT', 'NOT NULL': False, 'DEFAULT': None})
+('stime', {'type': 'TEXT', 'NOT NULL': False, 'DEFAULT': None})
+('etime', {'type': 'TEXT', 'NOT NULL': False, 'DEFAULT': None})
+('onlbit', {'type': 'INTEGER', 'NOT NULL': False, 'DEFAULT': None})
+('offbit', {'type': 'INTEGER', 'NOT NULL': False, 'DEFAULT': None})
+('runlog', {'type': 'TEXT', 'NOT NULL': False, 'DEFAULT': None})
+('nsadc', {'type': 'INTEGER', 'NOT NULL': False, 'DEFAULT': None})
+('tsadc', {'type': 'REAL', 'NOT NULL': False, 'DEFAULT': None})
+"
+1-5. ` cp -rvp runcatalog.db ../Data/ `
+
+
+#
+# Run the Run controller
+#
+1.
+    ` python rc.py `
+    ` Type "Shift" `
+    ` Select "Run Type"`
+    ` Leave logs "Run Desc"`
+    ` Press "Config File" button `
+    ` Put the proper configure file `
+    ` Press "Boot" button `
+    ` Press "Config Run" button `
+    ` Press "Start Run" button `
+
+    ... data taking ...
+
+    ` Press "End Run" button `
+    ` Press "Exit" button `
+
+
+*. If errors occur repeatedly,
+    ` python killrun.py run# `
+    ex) python killrun.py 100
+
+**. If not resolved,
+    turn off and on the ADC and TCB.
+
+***. Example configuration files.
+    ../Data/test_{adc_type}_wj.config
+    ../test_{adc_type}_wj.config
+    ../CUPDAQ/DAQ/config/*
+
+
+
+#
+# Old Log
+#
+1-1.
+    create_runcatalog_db.py: This creates "runcatalog.db" with the proper daqs.
+    killrun.py: 
+    onlconsts.py: This has some basic setting variables, so please check it.
+    onlutils.py: This contains utility functions only.
+    *rc.py: This one is the main run controller and it makes the GUI window pop.
+    rcterm.py:  
+    rcui.py, rc.ui: These are for the GUI window.
+    (old version)test.config: Configure file for a test made by JS Lee (?).
+    test_wj.config: Configure file for a test made by WJ Lee.
+
+

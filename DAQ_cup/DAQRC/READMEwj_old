@@ -1,0 +1,53 @@
+#
+#   HOW TO USE DAQRC.
+#
+
+0-1. 
+    ` yum install python3-devel `, ` yum install PyQt5 `, ` yum install qt5-qtbase-devel `
+
+0-2. 
+    If you got an error like the below,
+    "     from pydblite.sqlite import Database, Table
+    ModuleNotFoundError: No module named 'pydblite' ",
+    you don't have the package, so please install it.
+    ex) ` sudo pip install pydblite ` 
+
+    Also, if DAQ PC warns you that some packages are missing, then istall the packages.
+
+
+
+1-1.
+    create_runcatalog_db.py: This creates "runcatalog.db" with the proper daqs.
+    killrun.py: 
+    onlconsts.py: This has some basic setting variables, so please check it.
+    onlutils.py: This contains utility functions only.
+    *rc.py: This one is the main run controller and it makes the GUI window pop.
+    rcterm.py:  
+    rcui.py, rc.ui: These are for the GUI window.
+    (old version)test.config: Configure file for a test made by JS Lee (?).
+    test_wj.config: Configure file for a test made by WJ Lee.
+
+1-2.
+    ` cd ../ ` in DAQRC directory.
+    ` ./AllInOne.sh ` for making directories and moving config file.
+
+1-3.
+    ` python rc.py `
+    ` Type "Shift" `
+    ` Select "Run Type"`
+    ` Leave logs "Run Desc"`
+    ` Press "Config File" button `
+    ` Put the right configure file `
+    ` Press "Boot" button `
+    ` Press "Config Run" button `
+    ` Press "Start Run" button `
+    ... data taking ...
+    ` Press "End Run" button `
+    ` Press "Exit" button `
+
+***. Example configuration files.
+    In the directory, "DAQRC",
+
+    ../test_{adc_type}_wj.config
+    ../CUPDAQ/DAQ/config/*
+

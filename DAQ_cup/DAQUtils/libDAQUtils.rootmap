@@ -1,0 +1,6 @@
+[ libDAQUtils.so ]
+# List of selected classes
+class ELog
+class ELogger
+header DAQUtils/ELog.hh
+header DAQUtils/ELogger.hh

@@ -1,0 +1,6 @@
+[ libNotice.so ]
+# List of selected classes
+class usb3comroot
+class usb3tcbroot
+header Notice/usb3comroot.hh
+header Notice/usb3tcbroot.hh

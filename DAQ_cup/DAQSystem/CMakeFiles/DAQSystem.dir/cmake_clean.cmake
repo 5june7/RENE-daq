@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/DAQSystem.dir/G__DAQSystem.cxx.o"
+  "CMakeFiles/DAQSystem.dir/G__DAQSystem.cxx.o.d"
+  "CMakeFiles/DAQSystem.dir/src/AbsADC.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/AbsADC.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/AbsTCB.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/AbsTCB.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/AmoreADC.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/AmoreADC.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/CupFADCS.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/CupFADCS.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/CupFADCT.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/CupFADCT.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/CupGADCS.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/CupGADCS.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/CupGADCT.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/CupGADCT.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/CupIADCT.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/CupIADCT.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/CupMADCS.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/CupMADCS.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/CupMiniTCB.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/CupMiniTCB.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/CupSADCS.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/CupSADCS.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/CupSADCT.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/CupSADCT.cc.o.d"
+  "CMakeFiles/DAQSystem.dir/src/CupTCB.cc.o"
+  "CMakeFiles/DAQSystem.dir/src/CupTCB.cc.o.d"
+  "G__DAQSystem.cxx"
+  "libDAQSystem.pdb"
+  "libDAQSystem.rootmap"
+  "libDAQSystem.so"
+  "libDAQSystem_rdict.pcm"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/DAQSystem.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
