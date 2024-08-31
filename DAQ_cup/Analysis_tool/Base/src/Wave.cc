@@ -6,7 +6,7 @@
 // wrote by WJ Lee.
 //
 
-#include "/home/wonjun/daq/DAQ_cup/Analysis_tool/Base/include/Wave.hh"
+#include "../include/Wave.hh"
 
 
 std::vector<unsigned short>* AlignWaveform(std::vector<unsigned short> * w, int b){
