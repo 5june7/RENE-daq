@@ -93,7 +93,7 @@ void initializing(){
     
 }
 
-void reading_DLY_THR(char* run_str){
+void reading_DLY_THR(char* run_str, const char* DataDir){
 
     RV run;
 
@@ -112,7 +112,7 @@ void reading_DLY_THR(char* run_str){
     int val = 0;
 
     ifstream inf_txt;
-    inf_txt.open(Form("/Data/RAW/%s/PRD/Run%s_DLY_THR.log", run_str, run_str));
+    inf_txt.open(Form("%s/PRD/Run%s_DLY_THR.log", DataDir, run_str));
 
     string line;
 
@@ -223,47 +223,5 @@ void reading_DLY_THR(char* run_str){
   return;
 
 }
-
-/*void reading_DLY_THR(char* run_str){
-    for(int ich=0; ich<nchFADC; ich++) { Fdelay[ich] = -99; Fthr[ich] = -99; }
-    for(int ich=0; ich<nchSADC; ich++) { Sdelay[ich] = -99; Sthr[ich] = -99; }
-
-    char str1[100], str2[100], str3[100], str4[100], str5[100];
-    FILE* log = fopen(Form("/Data/RAW/%s/PRD/Run%s_DLY_THR.log", run_str, run_str), "r");
-    fscanf(log, "%s %s %s %s %s %lu %lu %lu %lu",  // DLY of FADC
-           str1, str2, str3, str4, str5,
-           &Fdelay[0], &Fdelay[1], &Fdelay[2], &Fdelay[3]);
-    fscanf(log, "%s %s %s %s %s %hu %hu %hu %hu", // THR of FADC
-           str1, str2, str3, str4, str5,
-           &Fthr[0], &Fthr[1], &Fthr[2], &Fthr[3]);
-    fscanf(log, "%s %s %s %s %s %lu %lu %lu %lu %lu %lu %lu %lu"
-                                "%lu %lu %lu %lu %lu %lu %lu %lu"
-                                "%lu %lu %lu %lu %lu %lu %lu %lu"
-                                "%lu %lu %lu %lu %lu %lu %lu %lu",  // DLY of SADC
-           str1, str2, str3, str4, str5,
-           &Sdelay[0], &Sdelay[1], &Sdelay[2], &Sdelay[3], 
-           &Sdelay[4], &Sdelay[5], &Sdelay[6], &Sdelay[7], 
-           &Sdelay[8], &Sdelay[9], &Sdelay[10], &Sdelay[11],
-           &Sdelay[12], &Sdelay[13], &Sdelay[14], &Sdelay[15],
-           &Sdelay[16], &Sdelay[17], &Sdelay[18], &Sdelay[19],
-           &Sdelay[20], &Sdelay[21], &Sdelay[22], &Sdelay[23], 
-           &Sdelay[24], &Sdelay[25], &Sdelay[26], &Sdelay[27],
-           &Sdelay[28], &Sdelay[29], &Sdelay[30], &Sdelay[31]);
-    fscanf(log, "%s %s %s %s %s %hu %hu %hu %hu %hu %hu %hu %hu"
-                                "%hu %hu %hu %hu %hu %hu %hu %hu"
-                                "%hu %hu %hu %hu %hu %hu %hu %hu"
-                                "%hu %hu %hu %hu %hu %hu %hu %hu",  // THR of SADC
-           str1, str2, str3, str4, str5,
-           &Sthr[0], &Sthr[1], &Sthr[2], &Sthr[3], 
-           &Sthr[4], &Sthr[5], &Sthr[6], &Sthr[7], 
-           &Sthr[8], &Sthr[9], &Sthr[10], &Sthr[11],
-           &Sthr[12], &Sthr[13], &Sthr[14], &Sthr[15],
-           &Sthr[16], &Sthr[17], &Sthr[18], &Sthr[19],
-           &Sthr[20], &Sthr[21], &Sthr[22], &Sthr[23], 
-           &Sthr[24], &Sthr[25], &Sthr[26], &Sthr[27],
-           &Sthr[28], &Sthr[29], &Sthr[30], &Sthr[31]);
-    fclose(log);
-}*/
-
 
 #endif

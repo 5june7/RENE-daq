@@ -29,7 +29,7 @@ void production_from_merged(int run, int subrun, const char* DataDir){
     in_t_tree->SetBranchAddress("EventInfo_SADC", &in_eventinfo_sadc);
     in_t_tree->SetBranchAddress("AChannelData_SADC", &in_achanneldata);
 
-    reading_DLY_THR(run_str);
+    reading_DLY_THR(run_str, DataDir);
 
 
     //++++++++
